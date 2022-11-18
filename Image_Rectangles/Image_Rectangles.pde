@@ -39,7 +39,16 @@ void setup() {
   smallerthingy1 = picHeight1;
   //
   pictureWidthAdjusted1 = rectangleWidth;
-  } else {}
+  pictureHeightRatio1 = smallerthingy1 / largerthingy1;
+  pictureHeightAdjusted1 = pictureHeightRatio1 * pictureWidthAdjusted1;
+  } else {
+  largerthingy1 = picHeight1;
+  smallerthingy1 = picWidth1;
+  //
+  pictureHeightAdjusted1 = rectangleHeight;
+  pictureWidthRatio1 = smallerthingy1 / largerthingy1;
+  pictureWidthAdjusted1 = pictureWidthRatio1 * pictureHeightAdjusted1;
+  }
   //Image orientation end
   //rectangular layout and image drawing to CANVAS
   rect(rectangleX, rectangleY, rectangleWidth, rectangleHeight);
@@ -48,7 +57,10 @@ void setup() {
     
   } //End setup
   //
-void draw() {} //End draw
+void draw() {
+  image(pic, rectangleX, rectangleY, pictureWidthAdjusted1, pictureHeightAdjusted1);
+  
+} //End draw
   //
 void keyPressed() {}//end keyPressed
   //
